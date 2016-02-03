@@ -17,18 +17,16 @@
   "permissions": [
     "tabs",
     "storage",
-    "http://*/*",
-    "https://*/*"
+    "https://bitbucket.org/*"
   ],
   "options_ui": {
     "page": "options.html",
-    "chrome_style": true,
-    "open_in_tab": true
+    "chrome_style": true
   },
   "content_scripts": [
     {
       "matches": [
-        "https://bitbucket.org/crossengage/ui/pull-requests/*/*"
+        "https://bitbucket.org/*/*/pull-requests/*/*"
       ],
       "js": [
         "scripts/contentscript.js"
