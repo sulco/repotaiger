@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "buckettaiger",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Replaces proper numbers in Bitbucket pull-requests descriptions to links to Taiga",
+    "description": "The description of the application"
+  }
+}
