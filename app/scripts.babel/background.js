@@ -4,8 +4,8 @@ chrome.runtime.onInstalled.addListener(details => {
   console.log('previousVersion', details.previousVersion);
 });
 
-chrome.tabs.onUpdated.addListener(tabId => {
-  chrome.pageAction.show(tabId);
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+  if (tab.url && tab.url.includes('https://bitbucket.org/')) {
+    chrome.pageAction.show(tabId);
+  }
 });
-
-console.log('\'Allo \'Allo! Event Page for Page Action');
