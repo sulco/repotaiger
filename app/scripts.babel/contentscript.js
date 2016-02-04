@@ -13,13 +13,16 @@ chrome.storage.sync.get({taigaUrl: ''}, items => {
     if (taigaUrl.slice(-1) !== '/') {
       taigaUrl = taigaUrl + '/';
     }
+    init();
 });
 
-Array.from(document.querySelectorAll('.description *, .pull-request-title h1'))
-    .filter(node =>
-        !node.querySelectorAll('*').length)
-    .forEach(node =>
-        node.innerHTML = taigaize(node.textContent));
+function init() {
+    Array.from(document.querySelectorAll('.description *, .pull-request-title h1'))
+        .filter(node =>
+            !node.querySelectorAll('*').length)
+        .forEach(node =>
+            node.innerHTML = taigaize(node.textContent));
+}
 
 function taigaize(text) {
     return linkTypes
